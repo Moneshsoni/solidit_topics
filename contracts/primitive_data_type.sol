@@ -15,4 +15,10 @@ contract Primtive{
             return "string is not less than 10";
         }
     }
+    
+    function verify_owner(address owner)public pure returns(address){
+        require(owner !=address(0),"Invalid owner");
+        // require(msg.sender == owner,"You are not owner");
+        return owner;
+    }
 }
