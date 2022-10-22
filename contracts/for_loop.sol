@@ -12,5 +12,17 @@ contract Add{
     function get_sum_res()public view returns(uint){
         return sum;
     }
+    
+    function whi_loop(uint _n)external pure returns(uint){
+        uint sum;
+        uint j=1;
+        while(j<=_n){
+            // if(j==3){
+            //     continue;
+            // }
+            sum += j;
+            j++;
+        }
+        return sum;
+    }
 }
-

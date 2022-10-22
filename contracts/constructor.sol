@@ -1,0 +1,13 @@
+pragma solidity 0.8.9;
+contract Constructor{
+    address public owner;
+    uint public x;
+    constructor(uint _x){
+        owner = msg.sender;
+        x = _x;
+    }
+    
+    function const_value()public view returns(address,uint){
+        return (owner,x);
+    }
+}
