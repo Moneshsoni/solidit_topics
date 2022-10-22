@@ -1,4 +1,4 @@
-pragma solidity 0.8 .9;
+pragma solidity 0.8.9;
 contract GlobalVariables {
     function block_coinbase()public view returns(address) {
         return block.coinbase;
