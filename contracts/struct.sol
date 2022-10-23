@@ -18,7 +18,6 @@ contract Structs{
         cars.push(toyota);
         cars.push(lambo);
         cars.push(tesla);
-        
         cars.push(Car("ferari",2020,msg.sender));
         Car storage _car = cars[0];
         _car.year = 1990;
