@@ -9,6 +9,7 @@ contract Event{
     
     event Message(address indexed _from,address indexed _to,string message);
     function sendMessage(address _to, string calldata message)external{
+        require(msg.sender!=_to,"Both address are same");
         emit Message(msg.sender,_to,message);
     } 
 }
