@@ -1,4 +1,4 @@
-pragma solidity 0.8 .9;
+pragma solidity 0.8.9;
 library ArrayLib {
     function find(uint[] storage arr, uint n)public view returns(uint) {
         for (uint i = 0; i <= arr.length; i ++) {
