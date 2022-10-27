@@ -36,4 +36,22 @@ contract Day4 {
         }
         return sum;
     }
+    
+    function get_palindrom(uint n)public pure returns(uint){
+        uint reversed = 0;
+        uint remainders;
+        uint original;
+        original = n;
+        while(n!=0){
+            remainders = n%10;
+            reversed = reversed*10+remainders;
+            n /=10;
+        }
+        if(original==reversed){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
 }
+                
