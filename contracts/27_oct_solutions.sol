@@ -53,5 +53,9 @@ contract Day4 {
             return 0;
         }
     }
+    
+    function mat_caculationn()public pure returns(uint){
+        return 0*10+2;
+    }
 }
                 
