@@ -1,14 +1,20 @@
+const hre = require("hardhat");
+
 async function main() {
-    const [deployer] = await ethers.getSigners();  
-    const StakingRewards = await ethers.getContractFactory("StakingRewards");
-    const stakingRewards = await StakingRewards.deploy();
-  
-    console.log("stakingRewards address:", stakingRewards.address);
-  }
-  
-  main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-      console.error(error);
-      process.exit(1);
-    });
+
+  const Lock = await hre.ethers.getContractFactory("Lock");
+  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+
+  await lock.deployed();
+
+  console.log(
+    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
+  );
+}
+
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
