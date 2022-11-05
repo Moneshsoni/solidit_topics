@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8;
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract StakingRewards {
     IERC20 public immutable stakingToken;
@@ -15,7 +16,7 @@ contract StakingRewards {
     uint public updatedAt;
     // Reward to be paid out per second
     uint public rewardRate;
-    // Sum of (reward rate * dt * 1e18 / total supply)
+    // Sum of (reward rate * dt * 1e18 / totaxl supply)
     uint public rewardPerTokenStored;
     // User address => rewardPerTokenStored
     mapping(address => uint) public userRewardPerTokenPaid;
@@ -126,23 +127,23 @@ contract StakingRewards {
     }
 }
 
-interface IERC20 {
-    function totalSupply() external view returns (uint);
+// interface IERC20 {
+//     function totalSupply() external view returns (uint);
 
-    function balanceOf(address account) external view returns (uint);
+//     function balanceOf(address account) external view returns (uint);
 
-    function transfer(address recipient, uint amount) external returns (bool);
+//     function transfer(address recipient, uint amount) external returns (bool);
 
-    function allowance(address owner, address spender) external view returns (uint);
+//     function allowance(address owner, address spender) external view returns (uint);
 
-    function approve(address spender, uint amount) external returns (bool);
+//     function approve(address spender, uint amount) external returns (bool);
 
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint amount
-    ) external returns (bool);
+//     function transferFrom(
+//         address sender,
+//         address recipient,
+//         uint amount
+//     ) external returns (bool);
 
-    event Transfer(address indexed from, address indexed to, uint value);
-    event Approval(address indexed owner, address indexed spender, uint value);
-}
+//     event Transfer(address indexed from, address indexed to, uint value);
+//     event Approval(address indexed owner, address indexed spender, uint value);
+// }
