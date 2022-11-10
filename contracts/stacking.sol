@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8;
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-errror Un
 contract StakingRewards {
     IERC20 public immutable stakingToken;
     IERC20 public immutable rewardsToken;
