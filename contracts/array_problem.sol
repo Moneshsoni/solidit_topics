@@ -5,7 +5,7 @@ contract Array_problem{
     uint[] public arr1;
     function ascending_array()external{
         for(uint i = 0;i<=arr.length;i++){
-            arr1.push(i);
+            arr1.push(arr[i]);
         }
     }
     function get_array()public view returns(uint[] memory){
