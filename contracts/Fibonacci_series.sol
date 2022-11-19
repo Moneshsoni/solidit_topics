@@ -1,5 +1,6 @@
 pragma solidity 0.8.9;
-contract Fibo{
+import "./calculator.sol";
+contract Fibo is Calculator{
     uint public arr;
     function fibonacci(uint n)public pure returns(uint){
         uint a=0;
