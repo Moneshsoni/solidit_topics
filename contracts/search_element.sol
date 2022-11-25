@@ -1,7 +1,7 @@
 pragma solidity 0.8.9;
 contract Array{
     uint[] public arr;
-    uint public n=1;
+    uint public n=10;
     function put_array(uint[] memory _arr)external{
         arr = _arr;
     }
@@ -13,5 +13,9 @@ contract Array{
             }
         }
         return "number not exiest";
+    }
+
+    function get_length()public view returns(uint){
+        return arr.length;
     }
 }
