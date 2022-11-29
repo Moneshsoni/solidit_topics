@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
-
+pragma solidity ^0.8.9;
 contract Receiver {
     event Received(address caller, uint amount, string message);
-
     fallback() external payable {
         emit Received(msg.sender, msg.value, "Fallback was called");
     }
