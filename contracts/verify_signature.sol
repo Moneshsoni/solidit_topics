@@ -1,13 +1,16 @@
 pragma solidity 0.8.9;
 contract VerifySignature {
+
+    //This function convert normal value to hash
     function getMessageHash(address _to, uint _amount, string memory _message, uint _nonce)public pure returns(bytes32) {
         return keccak256(abi.encodePacked(_to, _amount, _message ,_nonce));
     }
-
+    //We make ethereum compatible hash of getHash value.
     function getEthSignedMessageHash(bytes32 _messageHash)public pure returns(bytes32) {
         return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", _messageHash));
     }
     
+    //We can verify the signature genrated by user.
     function veriy(address _signer,
     address _to, uint _amount, string memory _message, uint _nonce, bytes memory signature)public pure returns (bool){
         bytes32 messageHash = getMessageHash(_to, _amount, _message, _nonce);
@@ -16,10 +19,10 @@ contract VerifySignature {
         return recoverSigner(ethSignedMessageHash, signature)  == _signer;
     }
     
-        function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature)
-        public
-        pure
-        returns (address)
+    function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature)
+    public
+    pure
+    returns (address)
     {
         (bytes32 r, bytes32 s, uint8 v) = splitSignature(_signature);
 
