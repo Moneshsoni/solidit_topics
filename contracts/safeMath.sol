@@ -8,4 +8,10 @@ contract SafeMath{
         assert(b<=a);
         return a-b;
     }
+
+    function add(uint a, uint b)external pure returns(uint){
+        uint c = a+b;
+        assert(c>=a);
+        return c;  
+    }
 }
