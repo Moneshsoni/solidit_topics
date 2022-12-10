@@ -43,4 +43,8 @@ contract GasGolf {
 
         total = _total;
     }
+    
+    function get_total()public view returns(uint){
+        return total;
+    }
 }
